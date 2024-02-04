@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>heart</title>
+	<style>
+		.heart{
+			position: relative;
+			width: 200px;
+			height: 160px;
+		}
+		.heart::after,
+		.heart::before{
+			position: absolute;
+			content: "";
+			width: 100px;
+			height: 160px;
+			left: 100px;
+			background-color: tomato;
+			border-radius: 100px 100px 0 0;
+			transform: rotate(-45deg);
+			transform-origin: 0 100%;
+		}
+		.heart::after{
+			left: 0;
+			transform-origin: 100% 100%;
+			transform: rotate(45deg);
+		}
+		.heart{
+			animation:  float alternate infinite 1s;
+		}
+		@keyframes float{
+			0%{transform: translateY(35px);}
+		}
+	</style>
+</head>
+<body>
+	<div class="heart"></div>
+</body>
+</html>
